@@ -40,3 +40,4 @@ temp
 worknode_scheduling/.settings
 worknode_scheduling/.project
 worknode_scheduling/.classpath
+**/target/

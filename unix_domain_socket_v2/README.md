@@ -1,0 +1,2 @@
+- add signal handler, auto unlink
+- don't bind client to a path
