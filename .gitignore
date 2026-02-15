@@ -33,6 +33,7 @@ bin/
 
 !**/Makefile
 
+*.elc
 .vscode
 output
 
