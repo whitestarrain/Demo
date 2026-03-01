@@ -1,0 +1,267 @@
+#+STARTUP: overview
+#+STARTUP: hideblocks
+; #+TODO: TODO DOING | CANCELED DONE
+; #+TYP_TODO: Fred Sara Lucy Mike | DONE
+
+* First (top) level headline
+:PROPERTIES:
+:END:
+test
+** Second                                                              :test:
+- Note taken on [2026-02-21 Sat 23:10] \\
+  sfjos sfj sodf
+test
+*** Third level
+some text
+**** TODO test
+1. sdfsd
+2.  dfsdf
+**** TODO test2
+*** Third level
+more text
+* DONE list item
+:LOGBOOK:
+- State "DONE"       from "REPORT"     [2026-02-23 Mon 23:04]
+:END:
+** demo data
+My favorite scenes are (in this order)
+1. The attack of the Rohirrim
+2. Eowyn's fight with the witch king
+   + this was already my favorite scene in the book
+   + I really like Miranda Otto.
+3. Peter Jackson being shot by Legolas
+   - on DVD only
+   He makes a really funny face when it happens.
+8. [@8] <favorite scenes 4 to 8 are skipped for brevity>
+But in the end, no individual scenes matter but the film as a whole.
+Important actors in this film are:
+- Elijah Wood :: He plays Frodo
+- Sean Astin :: He plays Sam, Frodo's friend.  I still remember him
+  very well from his role as Mikey Walsh in /The Goonies/.
+p* CANCELED block test
+CLOSED: [2026-02-22 Sun 11:50]
+:LOGBOOK:
+- CLOSING NOTE [2026-02-22 Sun 11:50] \\
+  canceled
+:END:
+#+begin_example
+example data
+#+end_example
+* table test
+| name   | phone | age |
+|--------+-------+-----|
+| Petter | sdf   | sdf |
+| sdf    | sdf   | fsd |
+* Another first (top) level headline
+* test TODO
+** Fred sdfs
+* DOING depencency test
+** DONE task 1
+CLOSED: [2026-02-22 Sun 11:34]
+:LOGBOOK:
+- State "DONE"       from "CANCELED"   [2026-02-22 Sun 11:34] \\
+  test3
+- State "CANCELED"   from "DOING"      [2026-02-22 Sun 11:34] \\
+  test2
+- State "DOING"      from "TODO"       [2026-02-22 Sun 11:34] \\
+  test1
+:END:
+** DONE task 2
+CLOSED: [2026-02-22 Sun 11:34]
+:LOGBOOK:
+- State "DONE"       from "CANCELED"   [2026-02-22 Sun 11:35] \\
+  test3
+- CLOSING NOTE [2026-02-22 Sun 11:34] \\
+  test
+:END:
+* progress logging
+** CANCELED task 1
+CLOSED: [2026-02-22 Sun 11:29]
+- CLOSING Note [2026-02-22 Sun 11:29] \\
+  test
+- State "DOING"      from "TODO"       [2026-02-22 Sun 11:24] \\
+  test
+* checkbox test
+- [X] sfsd
+* TODO sub task test [71%][5/7]
+:PROPERTIES:
+:COOKIE_DATA: todo recursive
+:END:
+** DONE task 1
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-02-23 Mon 23:30]
+:END:
+** TODO task2 [2/3]
+*** TODO task 2-1
+SCHEDULED: <2026-02-27 Fri 18:00>
+*** DONE task 2-2
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-02-23 Mon 23:30]
+:END:
+*** DONE task 2-3
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-02-23 Mon 23:30]
+:END:
+** DONE task3
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-02-23 Mon 23:24]
+:END:
+** DONE sdfsdf 
+SCHEDULED: <2026-02-27 Fri 20:00>
+:LOGBOOK:
+- State "DONE"       from              [2026-03-01 Sun 23:12]
+:END:
+* checkboxs
+- [ ] task [0/2]
+  - [ ] task sub1 
+  - [ ] task sub2
+* habit
+** DONE habit 1
+:PROPERTIES:
+:STYLE:    habit
+:END:
+:LOGBOOK:
+- State "DONE"       from "DONE"       [2026-02-24 Tue 00:34]
+- State "DONE"       from "DONE"       [2026-02-24 Tue 00:34]
+- State "DONE"       from "WAIT"       [2026-02-24 Tue 00:34]
+- State "WAIT"       from "DOING"      [2026-02-24 Tue 00:34]
+- State "DOING"      from "TODO"       [2026-02-24 Tue 00:34]
+:END:
+* tags test                                                            :test:
+** study 1                                                           :@study:
+*** a
+**** b
+***** study
+****** result                                                        :@study:
+* property test
+** test1
+:PROPERTIES:
+:COOKIE_DATA: todo recursive
+:END:
+* column view test
+:PROPERTIES:
+:COLUMNS:  %ITEM %EFFORT{:mean}
+:Owner_ALL:    Tammy Mark Karl Lisa Don
+:Status_ALL:   "In progress" "Not started yet" "Finished" ""
+:Approved_ALL: "[ ]" "[X]"
+:END:
+** Top level
+#+BEGIN: columnview :indent t :format "%ITEM %EFFORT{:mean}" :id local
+| ITEM                 | EFFORT |
+|----------------------+--------|
+| column view test     | 3:00   |
+| \_  Top level        | 3:00   |
+| \_    Intermediate 1 | 1:00   |
+| \_          Leaf 1   | 1h     |
+| \_      Leaf 2       | 1h     |
+| \_      Leaf 3       | 1h     |
+| \_    Intermediate 2 | 5h     |
+#+END:
+*** Intermediate 1
+:PROPERTIES:
+:EFFORT:   1:00
+:END:
+****** Leaf 1
+:PROPERTIES:
+:EFFORT: 1h
+:END:
+**** [#C] Leaf 2
+:PROPERTIES:
+:EFFORT: 1h
+:END:
+**** Leaf 3
+:PROPERTIES:
+:EFFORT: 1h
+:END:
+*** Intermediate 2
+:PROPERTIES:
+:EFFORT: 5h
+:END:
+* date and times
+** time1 <2026-02-24 Tue 00:37>
+SCHEDULED: <2026-02-24 Tue> DEADLINE: <2026-02-24 Tue>
+time1 content <2026-02-28 Sat 01:18>
+** active timestamp <2026-03-01 Sun 19:06>
+** inactive timestampe [2026-03-01 Sun 19:14]
+** TODO deadline test
+DEADLINE: <2026-03-05 Sun 20:00 -10d>
+:LOGBOOK:
+- State "DONE"       from "DOING"      [2026-03-01 Sun 19:43]
+- State "DOING"      from "WAIT"       [2026-03-01 Sun 19:43]
+- State "WAIT"       from "DOING"      [2026-03-01 Sun 19:43]
+- State "DOING"      from "TODO"       [2026-03-01 Sun 19:43]
+:END:
+** overdue deadline
+DEADLINE: <2026-03-01 Sun 12:00>
+** DONE done deadline 
+DEADLINE: <2026-03-01 Sun 20:00>
+:LOGBOOK:
+- State "DONE"       from              [2026-03-01 Sun 23:13]
+:END:
+** TODO scheduled test
+*** task1 
+SCHEDULED: <2026-03-01 Sun 22:00>
+*** DONE task2
+SCHEDULED: <2026-02-28 Sun 10:00>
+:LOGBOOK:
+- State "DONE"       from "DOING"      [2026-02-28 Sun 11:34]
+- State "DOING"      from "TODO"       [2026-02-28 Sun 15:34]
+:END:
+*** task3
+SCHEDULED: <2026-02-27 Sat 18:00 -1d>
+** repeat task
+*** TODO repeat +1
+DEADLINE: <2026-02-27 Fri +1d>
+:PROPERTIES:
+:LAST_REPEAT: [2026-03-01 Sun 23:22]
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:22]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:22]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:01]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:00]
+- State "DONE"       from "TODO"       [2026-02-24 Tue 00:48]
+:END:
+*** TODO repeat ++1
+DEADLINE: <2026-03-07 Sat ++1w>
+:PROPERTIES:
+:LAST_REPEAT: [2026-03-01 Sun 23:38]
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:38]
+- State "DONE"       from "DONE"       [2026-03-01 Sun 23:37]
+- State "DONE"       from "DONE"       [2026-03-01 Sun 23:37]
+- State "DONE"       from "DONE"       [2026-03-01 Sun 23:37]
+- State "DONE"       from "DONE"       [2026-03-01 Sun 23:37]
+- State "DONE"       from "DONE"       [2026-03-01 Sun 23:37]
+- State "DONE"       from "TODO"       [2026-03-01 Sun 23:37]
+:END:
+*** repeat .+1
+*** repeat 
+** TODO clock task<2026-03-02 Mon>
+:LOGBOOK:
+CLOCK: [2026-02-24 Tue 00:49]--[2026-02-24 Tue 00:51] =>  0:02
+:END:
+*** task1
+:LOGBOOK:
+CLOCK: [2026-03-02 Mon 00:09]--[2026-03-02 Mon 00:09] =>  0:00
+CLOCK: [2026-03-02 Mon 00:01]--[2026-03-02 Mon 00:06] =>  0:05
+CLOCK: [2026-03-01 Sun 23:54]--[2026-03-01 Sun 23:54] =>  0:00
+CLOCK: [2026-03-01 Sun 23:54]--[2026-03-01 Sun 23:54] =>  0:00
+CLOCK: [2026-03-01 Sun 23:51]--[2026-03-01 Sun 23:53] =>  0:02
+CLOCK: [2026-03-01 Sun 23:40]--[2026-03-01 Sun 23:41] =>  0:01
+:END:
+*** task2
+:LOGBOOK:
+CLOCK: [2026-03-02 Mon 00:06]--[2026-03-02 Mon 00:09] =>  0:03
+CLOCK: [2026-03-01 Sun 23:54]--[2026-03-02 Mon 00:09] =>  0:15
+CLOCK: [2026-03-01 Sun 23:54]--[2026-03-01 Sun 23:54] =>  0:00
+:END:
+** relative clock
